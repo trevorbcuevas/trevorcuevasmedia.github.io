@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Trevor Cuevas Media</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -43,6 +47,7 @@
     }
 
     .btn {
+      display: inline-block;
       margin-top: 2rem;
       padding: 12px 24px;
       border: none;
@@ -52,6 +57,7 @@
       border-radius: 16px;
       cursor: pointer;
       transition: background 0.3s;
+      text-decoration: none;
     }
 
     .btn:hover {
@@ -155,7 +161,7 @@
   <header>
     <h1>Trevor Cuevas Media</h1>
     <p>Cinematic Real Estate Videos That Sell Homes Faster Across Southern California</p>
-    <button class="btn">Book a Shoot</button>
+    <a href="#contact" class="btn">Book a Shoot</a>
   </header>
 
   <!-- Services -->
@@ -194,7 +200,7 @@
   </section>
 
   <!-- Contact -->
-  <section class="contact">
+  <section id="contact" class="contact">
     <h2 class="section-title">Let’s Work Together</h2>
     <p>Ready to take your listings to the next level? Let’s make something amazing.</p>
     <form>
