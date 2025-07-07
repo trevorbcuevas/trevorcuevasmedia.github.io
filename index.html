@@ -46,8 +46,7 @@
       margin: 0 auto;
     }
 
-    .btn,
-    button[type="submit"] {
+    .btn {
       display: inline-block;
       margin-top: 2rem;
       padding: 12px 24px;
@@ -63,12 +62,6 @@
 
     .btn:hover {
       background-color: #e5e5e5;
-      transform: scale(1.05);
-    }
-
-    button[type="submit"]:hover {
-      background-color: #333;
-      color: #fff;
       transform: scale(1.05);
     }
 
@@ -139,19 +132,10 @@
       text-align: center;
     }
 
-    form {
-      display: grid;
-      gap: 1rem;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    input,
-    textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 16px;
-      font-size: 1rem;
+    .contact a {
+      color: #000;
+      font-weight: bold;
+      text-decoration: underline;
     }
 
     footer {
@@ -210,12 +194,8 @@
   <section id="contact" class="contact">
     <h2 class="section-title">Let’s Work Together</h2>
     <p>Ready to take your listings to the next level? Let’s make something amazing.</p>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Tell me about your project..." rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <p>Email me directly at <a href="mailto:trevor@trevorcuevas.com">trevor@trevorcuevas.com</a></p>
+    <p>Or call/text: <a href="tel:+18054520598">805-452-0598</a></p>
   </section>
 
   <!-- Footer -->
