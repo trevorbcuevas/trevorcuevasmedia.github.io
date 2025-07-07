@@ -1,172 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SkyFrame Media | Real Estate Videography</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      color: #333;
-    }
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-white text-gray-900 font-sans">
+      {/* Hero Section */}
+      <section className="bg-black text-white py-24 px-6 text-center">
+        <h1 className="text-5xl font-bold mb-4">Trevor Cuevas Media</h1>
+        <p className="text-xl max-w-2xl mx-auto">Cinematic Real Estate Videos That Sell Homes Faster Across Southern California</p>
+        <button className="mt-8 bg-white text-black font-semibold px-6 py-3 rounded-2xl hover:bg-gray-200 transition">Book a Shoot</button>
+      </section>
 
-    header {
-      background: #111;
-      color: #fff;
-      padding: 60px 20px;
-      text-align: center;
-    }
+      {/* Services */}
+      <section className="py-20 px-6 bg-gray-100">
+        <h2 className="text-4xl font-bold text-center mb-12">What We Offer</h2>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="bg-white rounded-2xl shadow p-6">
+            <h3 className="text-2xl font-bold mb-4">Listing Videos</h3>
+            <p>Engaging walk-throughs that highlight property features and maximize buyer interest.</p>
+          </div>
+          <div className="bg-white rounded-2xl shadow p-6">
+            <h3 className="text-2xl font-bold mb-4">Drone Footage</h3>
+            <p>Stunning aerial views to showcase properties and neighborhoods from above.</p>
+          </div>
+          <div className="bg-white rounded-2xl shadow p-6">
+            <h3 className="text-2xl font-bold mb-4">Agent Promos</h3>
+            <p>Build your brand and connect with clients through personalized video content.</p>
+          </div>
+        </div>
+      </section>
 
-    header h1 {
-      margin: 0;
-      font-size: 2.8em;
-    }
+      {/* Portfolio */}
+      <section className="py-20 px-6">
+        <h2 className="text-4xl font-bold text-center mb-12">Recent Work</h2>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="aspect-video bg-black rounded-2xl"></div>
+          <div className="aspect-video bg-black rounded-2xl"></div>
+          <div className="aspect-video bg-black rounded-2xl"></div>
+        </div>
+      </section>
 
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
+      {/* About */}
+      <section className="py-20 px-6 bg-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">Meet Trevor</h2>
+          <p className="text-lg">Trevor Cuevas is a SoCal-based video producer specializing in high-quality real estate content that helps agents sell listings quickly. With a deep understanding of visual storytelling and marketing, Trevor brings listings to life with cinematic flair and precision.</p>
+        </div>
+      </section>
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+      {/* Contact */}
+      <section className="py-20 px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">Let’s Work Together</h2>
+          <p className="text-lg mb-8">Ready to take your listings to the next level? Let’s make something amazing.</p>
+          <form className="grid gap-4">
+            <input type="text" placeholder="Your Name" className="border p-3 rounded-2xl" />
+            <input type="email" placeholder="Your Email" className="border p-3 rounded-2xl" />
+            <textarea placeholder="Tell me about your project..." className="border p-3 rounded-2xl"></textarea>
+            <button className="bg-black text-white font-semibold px-6 py-3 rounded-2xl hover:bg-gray-800 transition">Send Message</button>
+          </form>
+        </div>
+      </section>
 
-    .video {
-      text-align: center;
-    }
-
-    iframe {
-      width: 100%;
-      max-width: 800px;
-      height: 450px;
-      border: none;
-      margin-top: 20px;
-      border-radius: 8px;
-    }
-
-    .clients, .rates {
-      background: #fff;
-      margin-top: 20px;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    .clients h2, .rates h2, .contact h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .client-logos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .client-logos img {
-      width: 120px;
-      height: auto;
-    }
-
-    .rates ul {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-    }
-
-    .rates li {
-      padding: 10px;
-      font-size: 1.1em;
-    }
-
-    .contact form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 500px;
-      margin: auto;
-    }
-
-    input, textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1em;
-    }
-
-    button {
-      padding: 12px;
-      background: #111;
-      color: white;
-      border: none;
-      font-size: 1em;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #333;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #222;
-      color: white;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>SkyFrame Media</h1>
-    <p>High-end Real Estate Videography That Sells Homes</p>
-  </header>
-
-  <section class="video">
-    <h2>Featured Work</h2>
-    <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
-  </section>
-
-  <section class="clients">
-    <h2>Our Clients</h2>
-    <div class="client-logos">
-      <img src="https://via.placeholder.com/120x60?text=ReMax" alt="ReMax">
-      <img src="https://via.placeholder.com/120x60?text=Zillow" alt="Zillow">
-      <img src="https://via.placeholder.com/120x60?text=Redfin" alt="Redfin">
-      <img src="https://via.placeholder.com/120x60?text=Keller+Williams" alt="Keller Williams">
-    </div>
-  </section>
-
-  <section class="rates">
-    <h2>Our Packages</h2>
-    <ul>
-      <li>🏠 Basic Listing Video – $199</li>
-      <li>🎬 Cinematic Home Tour – $399</li>
-      <li>📸 Add Drone Footage – +$99</li>
-      <li>📦 Bundle Deals for Realtors Available</li>
-    </ul>
-  </section>
-
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Tell us about your property or project..."></textarea>
-      <button type="submit">Send Inquiry</button>
-    </form>
-  </section>
-
-  <footer>
-    &copy; 2025 SkyFrame Media. All rights reserved.
-  </footer>
-
-</body>
-</html>
+      {/* Footer */}
+      <footer className="bg-black text-white py-6 text-center">
+        <p>&copy; 2025 Trevor Cuevas Media • SoCal Real Estate Video Production</p>
+      </footer>
+    </main>
+  );
+}
