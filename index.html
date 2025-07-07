@@ -1,68 +1,214 @@
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* Hero Section */}
-      <section className="bg-black text-white py-24 px-6 text-center">
-        <h1 className="text-5xl font-bold mb-4">Trevor Cuevas Media</h1>
-        <p className="text-xl max-w-2xl mx-auto">Cinematic Real Estate Videos That Sell Homes Faster Across Southern California</p>
-        <button className="mt-8 bg-white text-black font-semibold px-6 py-3 rounded-2xl hover:bg-gray-200 transition">Book a Shoot</button>
-      </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trevor Cuevas Media</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      {/* Services */}
-      <section className="py-20 px-6 bg-gray-100">
-        <h2 className="text-4xl font-bold text-center mb-12">What We Offer</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="bg-white rounded-2xl shadow p-6">
-            <h3 className="text-2xl font-bold mb-4">Listing Videos</h3>
-            <p>Engaging walk-throughs that highlight property features and maximize buyer interest.</p>
-          </div>
-          <div className="bg-white rounded-2xl shadow p-6">
-            <h3 className="text-2xl font-bold mb-4">Content Scheduling</h3>
-            <p>Strategic planning to ensure your video content is delivered consistently and timed to maximize visibility and engagement.</p>
-          </div>
-          <div className="bg-white rounded-2xl shadow p-6">
-            <h3 className="text-2xl font-bold mb-4">Agent Promos</h3>
-            <p>Build your brand and connect with clients through personalized video content.</p>
-          </div>
-        </div>
-      </section>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background-color: #ffffff;
+      color: #111111;
+    }
 
-      {/* Portfolio */}
-      <section className="py-20 px-6">
-        <h2 className="text-4xl font-bold text-center mb-12">Recent Work</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="aspect-video bg-black rounded-2xl"></div>
-          <div className="aspect-video bg-black rounded-2xl"></div>
-          <div className="aspect-video bg-black rounded-2xl"></div>
-        </div>
-      </section>
+    header,
+    footer,
+    section {
+      padding: 60px 20px;
+    }
 
-      {/* About */}
-      <section className="py-20 px-6 bg-gray-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Meet Trevor</h2>
-          <p className="text-lg">Trevor Cuevas is a SoCal-based video producer specializing in high-quality real estate content that helps agents sell listings quickly. With a deep understanding of visual storytelling and marketing, Trevor brings listings to life with cinematic flair and precision.</p>
-        </div>
-      </section>
+    header {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+    }
 
-      {/* Contact */}
-      <section className="py-20 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Let’s Work Together</h2>
-          <p className="text-lg mb-8">Ready to take your listings to the next level? Let’s make something amazing.</p>
-          <form className="grid gap-4">
-            <input type="text" placeholder="Your Name" className="border p-3 rounded-2xl" />
-            <input type="email" placeholder="Your Email" className="border p-3 rounded-2xl" />
-            <textarea placeholder="Tell me about your project..." className="border p-3 rounded-2xl"></textarea>
-            <button className="bg-black text-white font-semibold px-6 py-3 rounded-2xl hover:bg-gray-800 transition">Send Message</button>
-          </form>
-        </div>
-      </section>
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-6 text-center">
-        <p>&copy; 2025 Trevor Cuevas Media • SoCal Real Estate Video Production</p>
-      </footer>
-    </main>
-  );
-}
+    header p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      margin-top: 2rem;
+      padding: 12px 24px;
+      border: none;
+      background-color: #fff;
+      color: #000;
+      font-weight: bold;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e5e5e5;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    .services,
+    .portfolio {
+      display: grid;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media(min-width: 768px) {
+      .services,
+      .portfolio {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio .video {
+      background-color: #000;
+      border-radius: 16px;
+      aspect-ratio: 16/9;
+    }
+
+    .gray-bg {
+      background-color: #f0f0f0;
+    }
+
+    .about p,
+    .contact p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 1rem;
+      text-align: center;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    input,
+    textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 16px;
+      font-size: 1rem;
+    }
+
+    button[type="submit"] {
+      background-color: #000;
+      color: #fff;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #333;
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header>
+    <h1>Trevor Cuevas Media</h1>
+    <p>Cinematic Real Estate Videos That Sell Homes Faster Across Southern California</p>
+    <button class="btn">Book a Shoot</button>
+  </header>
+
+  <!-- Services -->
+  <section class="gray-bg">
+    <h2 class="section-title">What We Offer</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Listing Videos</h3>
+        <p>Engaging walk-throughs that highlight property features and maximize buyer interest.</p>
+      </div>
+      <div class="card">
+        <h3>Content Scheduling</h3>
+        <p>Strategic planning to ensure your video content is delivered consistently and timed to maximize visibility and engagement.</p>
+      </div>
+      <div class="card">
+        <h3>Agent Promos</h3>
+        <p>Build your brand and connect with clients through personalized video content.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section>
+    <h2 class="section-title">Recent Work</h2>
+    <div class="portfolio">
+      <div class="video"></div>
+      <div class="video"></div>
+      <div class="video"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="gray-bg about">
+    <h2 class="section-title">Meet Trevor</h2>
+    <p>Trevor Cuevas is a SoCal-based video producer specializing in high-quality real estate content that helps agents sell listings quickly. With a deep understanding of visual storytelling and marketing, Trevor brings listings to life with cinematic flair and precision.</p>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
+    <h2 class="section-title">Let’s Work Together</h2>
+    <p>Ready to take your listings to the next level? Let’s make something amazing.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Tell me about your project..." rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Trevor Cuevas Media • SoCal Real Estate Video Production</p>
+  </footer>
+
+</body>
+</html>
